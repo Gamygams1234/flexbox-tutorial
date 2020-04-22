@@ -7,31 +7,40 @@ body {
   background: #eee;
 }
 
-.flex-container {
-  display: flex;
-  background: #fff;
-  flex-wrap: wrap; /*theis will set the green to the bottom as the window shrinks*/
-  /* flex-wrap: wrap-reverse; this will set the green to the top */
-}
 .wrapper {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
 
-.box {
-  height: 100px;
-  flex: 1 0 300px; /*This will set the flex-grow to 1, flex-shrink to 0, and flex-basis to 300 px*/
+/* some basic styles */
+nav {
+  background: #333;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+nav a:hover {
+  background: #555;
 }
 
-.one {
-  background: red;
+/* making a media query */
+@media screen and (min-width: 768px) {
+  nav ul {
+    display: flex;
+    /* we can justify content to have the items in the navigation go all the way to the end or have space between */
+    justify-content: space-around;
+  }
+  nav ul li {
+    /*  this is growing all the items to all the available space */
+    //flex: 1 1 0;
+  }
 }
-.two {
-  background: blue;
-}
-.three {
-  background: green;
-}
-/* flex basis has the minimum width but it can shrink */
