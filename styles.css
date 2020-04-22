@@ -13,17 +13,16 @@ body {
   flex-wrap: wrap; /*theis will set the green to the bottom as the window shrinks*/
   /* flex-wrap: wrap-reverse; this will set the green to the top */
 }
-/* the default is the set it to no wrap, and it can make your websites more responsive */
 .wrapper {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .box {
   height: 100px;
-  min-width: 300px;
-  flex-grow: 1;
+  flex: 1 0 300px; /*This will set the flex-grow to 1, flex-shrink to 0, and flex-basis to 300 px*/
 }
 
 .one {
@@ -35,3 +34,4 @@ body {
 .three {
   background: green;
 }
+/* flex basis has the minimum width but it can shrink */
