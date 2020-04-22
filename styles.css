@@ -13,8 +13,6 @@ body {
   margin: 0 auto;
 }
 
-/* some basic styles */
-/* we want to make the nav a flex container so we can have bothe lists lef to right */
 nav {
   background: #333;
 }
@@ -47,7 +45,7 @@ a.fb {
 /* handiling the flex for the social  */
 nav ul.social {
   flex: 1 1 0;
-  /* this will make our icins sit on one line when it sits on small screens */
+
   display: flex;
 }
 /* this will make our items expand to the available space */
@@ -59,7 +57,22 @@ nav ul.social li {
   max-width: 80px;
   margin: 0 auto;
 }
-/* making a media query */
+/* grid vs flex base styles */
+#blocks {
+  margin: 20px;
+}
+article {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  /* this will incorperate the padding to the overall width */
+  box-sizing: border-box;
+}
+article h2 {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0;
+}
 @media screen and (min-width: 768px) {
   nav ul {
     display: flex;
@@ -68,7 +81,7 @@ nav ul.social li {
     /*  this is growing all the items to all the available space */
     flex: 1 1 0;
   }
-  /* we are putting the flex display here for the nav so it can stack when it shrinks */
+
   nav {
     display: flex;
     /* this will have seperation between the two lists in the nav */
@@ -77,5 +90,18 @@ nav ul.social li {
   .social {
     /* taking away the margin so the icons can go to the right on larger screens */
     margin: 0;
+  }
+  /* we are setting the styles of the articles to make it a grid */
+  #blocks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  article {
+    flex: 0 1 32%;
+  }
+  /* this will change the layout from stack to grid when the function gets called */
+  article.stack {
+    flex: 0 1 100%;
   }
 }
