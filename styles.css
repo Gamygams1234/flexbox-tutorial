@@ -14,6 +14,7 @@ body {
 }
 
 /* some basic styles */
+/* we want to make the nav a flex container so we can have bothe lists lef to right */
 nav {
   background: #333;
 }
@@ -31,16 +32,50 @@ nav a {
 nav a:hover {
   background: #555;
 }
-
+a.tw {
+  background: url(img/tw.png) no-repeat center;
+  background-size: 80%;
+}
+a.fb {
+  background: url(img/fb.png) no-repeat center;
+  background-size: 80%;
+}
+/* how to get rid of text */
+.social a {
+  text-indent: -100000px;
+}
+/* handiling the flex for the social  */
+nav ul.social {
+  flex: 1 1 0;
+  /* this will make our icins sit on one line when it sits on small screens */
+  display: flex;
+}
+/* this will make our items expand to the available space */
+nav ul.social li {
+  flex: 1 1 0;
+}
+/* here we git the social a max width so it can stay in the right and in the lane */
+.social {
+  max-width: 80px;
+  margin: 0 auto;
+}
 /* making a media query */
 @media screen and (min-width: 768px) {
   nav ul {
     display: flex;
-    /* we can justify content to have the items in the navigation go all the way to the end or have space between */
-    justify-content: space-around;
   }
   nav ul li {
     /*  this is growing all the items to all the available space */
-    //flex: 1 1 0;
+    flex: 1 1 0;
+  }
+  /* we are putting the flex display here for the nav so it can stack when it shrinks */
+  nav {
+    display: flex;
+    /* this will have seperation between the two lists in the nav */
+    justify-content: space-between;
+  }
+  .social {
+    /* taking away the margin so the icons can go to the right on larger screens */
+    margin: 0;
   }
 }
