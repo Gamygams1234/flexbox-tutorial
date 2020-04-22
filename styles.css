@@ -6,10 +6,14 @@
 body {
   background: #eee;
 }
-/* will set items side to side rather than in a block display */
+
 .flex-container {
   display: flex;
+  background: #fff;
+  flex-wrap: wrap; /*theis will set the green to the bottom as the window shrinks*/
+  /* flex-wrap: wrap-reverse; this will set the green to the top */
 }
+/* the default is the set it to no wrap, and it can make your websites more responsive */
 .wrapper {
   width: 100%;
   max-width: 960px;
@@ -18,18 +22,16 @@ body {
 
 .box {
   height: 100px;
-  width: 320px;
+  min-width: 300px;
+  flex-grow: 1;
 }
-/* all of the boxes are even, but the higher the shrink rate, the smaller it will get */
+
 .one {
   background: red;
-  flex-shrink: 1;
 }
 .two {
   background: blue;
-  flex-shrink: 2;
 }
 .three {
   background: green;
-  flex-shrink: 3;
 }
