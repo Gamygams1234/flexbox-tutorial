@@ -18,13 +18,18 @@ body {
 .box {
   height: 100px;
   min-width: 100px;
+  /* flex-grow: 1;    we set this on the item itself */
 }
+/* the growth will tell us how many columns to take */
 .one {
   background: red;
+  flex-grow: 1;
 }
 .two {
   background: blue;
+  flex-grow: 2;
 }
 .three {
   background: green;
+  flex-grow: 1;
 }
