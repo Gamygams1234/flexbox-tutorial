@@ -15,21 +15,21 @@ body {
   max-width: 960px;
   margin: 0 auto;
 }
+
 .box {
   height: 100px;
-  min-width: 100px;
-  /* flex-grow: 1;    we set this on the item itself */
+  width: 320px;
 }
-/* the growth will tell us how many columns to take */
+/* all of the boxes are even, but the higher the shrink rate, the smaller it will get */
 .one {
   background: red;
-  flex-grow: 1;
+  flex-shrink: 1;
 }
 .two {
   background: blue;
-  flex-grow: 2;
+  flex-shrink: 2;
 }
 .three {
   background: green;
-  flex-grow: 1;
+  flex-shrink: 3;
 }
